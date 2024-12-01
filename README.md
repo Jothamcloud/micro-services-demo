@@ -82,16 +82,19 @@ Check out our [Setup Guide](docs/setup.md) for detailed installation and configu
 ## Screenshots
 
 ### Jenkins Pipeline
-[Screenshot showing successful pipeline execution]
+![image](./screenshots/k8-jenkins.png)
 
 ### SonarQube Analysis
-[Screenshot showing code quality metrics]
+![image](k8-sonar.png)
+
 
 ### ArgoCD Deployment
-[Screenshot showing application deployment status]
+![image](k8-argocd2.png)
+
 
 ### Running Application
-[Screenshot showing the deployed application]
+![image](k8-test1.png)
+
 
 ## Monitoring & Maintenance
 
