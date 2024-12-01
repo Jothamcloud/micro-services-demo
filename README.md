@@ -3,7 +3,7 @@
 ## Overview
 Online Boutique is a cloud-native microservices demo application that simulates an e-commerce platform. This repository demonstrates a production-grade deployment using modern DevOps practices and tools. The architecture consists of multiple microservices communicating with each other to provide a complete e-commerce experience.
 
-![image](C:\Users\USER\Downloads\architecture-diagram.png)
+![image](architecture-diagram.png)
 
 
 ## Architecture
