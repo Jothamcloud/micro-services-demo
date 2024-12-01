@@ -3,7 +3,7 @@
 ## Overview
 Online Boutique is a cloud-native microservices demo application that simulates an e-commerce platform. This repository demonstrates a production-grade deployment using modern DevOps practices and tools. The architecture consists of multiple microservices communicating with each other to provide a complete e-commerce experience.
 
-![image](architecture-diagram.png)
+![image](./screenshots/architecture-diagram.png)
 
 
 ## Architecture
@@ -85,15 +85,15 @@ Check out our [Setup Guide](docs/setup.md) for detailed installation and configu
 ![image](./screenshots/k8-jenkins.png)
 
 ### SonarQube Analysis
-![image](k8-sonar.png)
+![image](./screenshots/k8-sonar.png)
 
 
 ### ArgoCD Deployment
-![image](k8-argocd2.png)
+![image](./screenshots/k8-argocd2.png)
 
 
 ### Running Application
-![image](k8-test1.png)
+![image](./screenshots/k8-test1.png)
 
 
 ## Monitoring & Maintenance
@@ -125,13 +125,4 @@ Check out our [Setup Guide](docs/setup.md) for detailed installation and configu
 - Performance optimization
 - Security hardening
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-- [Link to original demo application]
-- Infrastructure tool providers
-- Contributors and maintainers
-
-## Contact
-Project Link: [https://github.com/yourusername/online-boutique](https://github.com/yourusername/online-boutique)
