@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: paymentservice-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        app: paymentservice
+  template:
+    metadata: 
+      labels: 
+        app: paymentservice
+    spec: 
+      containers: 
+       - name: paymentservice
+         image: jothamcloud/paymentservice:3
+         ports:
+         - containerPort: 50051 
+         env: 
+          - name: PORT
+            value: "50051"
+          - name: DISABLE_PROFILER
+            value: "1"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_DEBUGGING
+            value: "1"
+---
+apiVersion: v1
+kind: Service
+metadata: 
+   name: paymentservice
+spec:
+  type: ClusterIP
+  ports:
+  - port: 50051
+    targetPort: 50051
+  selector:
+    app: paymentservice
+

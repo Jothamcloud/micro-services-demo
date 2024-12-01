@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: currencyservice-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        app: currencyservice
+  template:
+    metadata: 
+      labels: 
+        app: currencyservice
+    spec: 
+      containers: 
+       - name: currencyservice
+         image: jothamcloud/currencyservice:3
+         ports:
+         - containerPort: 7000 
+         env: 
+          - name: PORT
+            value: "7000"
+          - name: DISABLE_PROFILER
+            value: "1"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_DEBUGGING
+            value: "1"
+---
+apiVersion: v1
+kind: Service
+metadata: 
+   name: currencyservice
+spec:
+  type: ClusterIP
+  ports:
+  - port: 7000
+    targetPort: 7000
+  selector:
+    app: currencyservice

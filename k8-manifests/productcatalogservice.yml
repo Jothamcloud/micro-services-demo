@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: productcatalogservice-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        app: productcatalogservice
+  template:
+    metadata: 
+      labels: 
+        app: productcatalogservice
+    spec: 
+      containers: 
+       - name: productcatalogservice
+         image: jothamcloud/productcatalogservice:4
+         ports:
+         - containerPort: 3550 
+         env: 
+          - name: PORT
+            value: "3550"
+---
+apiVersion: v1
+kind: Service
+metadata: 
+   name: productcatalogservice
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3550
+    targetPort: 3550
+  selector:
+    app: productcatalogservice
+
